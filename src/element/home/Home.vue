@@ -5,14 +5,16 @@
         <el-col :span="18">
           <h1>目录</h1>
           <el-menu
+            :unique-opened=true
             default-active="2"
             class="el-menu-vertical-demo"
             @open="handleOpen"
             @close="handleClose"
-            background-color="#545c64"
-            text-color="#fff"
+            background-color="#eee"
+            text-color="#000"
             active-text-color="#ffd04b">
             <home-basic></home-basic>
+            <home-form></home-form>
           </el-menu>
         </el-col>
       </el-row>
@@ -22,10 +24,12 @@
 
 <script>
 import HomeBasic from './components/Basic.vue'
+import HomeForm from './components/Form.vue'
 export default {
   name: 'Home',
   components: {
-    HomeBasic
+    HomeBasic,
+    HomeForm
   },
   methods: {
     handleOpen (key, keyPath) {
